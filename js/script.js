@@ -126,7 +126,8 @@ const Utils = {
 	formatCurrency(value){
 		const signal = Number(value) < 0 ? "-" : ""
 
-		value = String(value).replace(/\D/g,"")
+		value = value * 100
+		return Math.round(value)
 
 		value = Number(value) / 100
 
@@ -137,7 +138,6 @@ const Utils = {
 
 		return signal + value
 	},
-
 }
 
 const Form = {
@@ -198,8 +198,6 @@ const Form = {
 
 	}
 }
-
-
 
 const App = {
 	init(){
